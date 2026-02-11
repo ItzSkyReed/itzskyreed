@@ -1,0 +1,23 @@
+name: Metrics
+on:
+  # Schedule updates every 4 hours
+  schedule: 
+    - cron: "0 0/4 * * *"
+  # (optional) Run workflow manually
+  workflow_dispatch:
+  # (optional) Run workflow when pushing on master/main
+  # push:
+      
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    # Grant writable permission.
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Yekaterinburg
+          plugin_languages: yes
+          token: ${{ secrets.METRICS_TOKEN }}
