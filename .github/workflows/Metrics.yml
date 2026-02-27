@@ -18,6 +18,11 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           base: header, activity, community, repositories, metadata
+          config_display: large
           config_timezone: Asia/Yekaterinburg
           plugin_languages: yes
+          plugin_languages_details: percentage
+          plugin_languages_sections: recently-used
+          plugin_languages_limit: 10
+          config_animations: yes
           token: ${{ secrets.METRICS_TOKEN }}
