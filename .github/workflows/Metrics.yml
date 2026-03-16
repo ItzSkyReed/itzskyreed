@@ -2,7 +2,7 @@ name: Metrics
 on:
   # Schedule updates every 4 hours
   schedule: 
-    - cron: "0 0/24 * * *"
+    - cron: "0 0 * * *"
   # (optional) Run workflow manually
   workflow_dispatch:
   # (optional) Run workflow when pushing on master/main
